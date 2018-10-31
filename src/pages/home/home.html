@@ -1,14 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>
+        Ionic Babeliser
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+  <ion-item>
+      <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()">
+         <ion-option value="en" selected="true">English</ion-option>
+         <ion-option value="de">German</ion-option>
+         <ion-option value="es">Spanish</ion-option>
+         <ion-option value="fr">French</ion-option>
+      </ion-select>
+    </ion-item>
+   <ion-card padding>
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+    </ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select [(ngModel)]="lang" (ionChange)="switchLanguage()">
+          <ion-option value="en">English</ion-option>
+          <ion-option value="ta">Tamizh (தமிழ்)</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item>
+        <h2>{{ 'home.APPLE' | translate }}</h2>  
+      </ion-item> 
+      <ion-item>
+        <h2>{{ 'home.BALL' | translate }}</h2>   
+      </ion-item>
+      <ion-item>
+        <h2>{{ 'home.CAT' | translate }}</h2>
+      </ion-item>
+    </ion-list>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<button ion-button (click)="Go()">English</button>
 </ion-content>

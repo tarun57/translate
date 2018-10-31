@@ -1,0 +1,8 @@
+{
+    "home":
+            {
+            "hello":"hola",  
+            "world":"wolds",
+            "heading":"head"
+            }
+}
